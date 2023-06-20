@@ -1,0 +1,162 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+body {
+    font-family: "Poppins";
+    overflow-y: scroll;
+}
+.splashContainer{
+    background-image: url('https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/08/ZG_Brand_LA_0322_Harvard-_ExtFront_1504_4936px_NO-PPL_desktopImg2x-scaled.webp');
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
+    height: 50vh;
+}
+.search-center{
+    margin-top: 170px;
+    margin-left: 400px;
+    display: inline-block;;
+  
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    gap: 20px;
+    
+
+}
+.card-hover:hover{
+    box-shadow: rgb(209 209 213) 0px 5px 15px;
+}
+.image-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    object-fit: contain;
+}
+.contained{
+    object-fit: contain;
+}
+a{
+    text-decoration: none;
+}
+
+.customerHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mid-container {
+    
+    margin: auto;
+    grid-template-columns: 2.5fr 1fr;
+    justify-content: flex-start;
+    gap: 1px;
+    overflow: auto;
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        position: relative;
+        background-color: white;
+    }
+    
+    .modal {
+        overflow-y: scroll;
+    }
+    
+    .small-container {
+        width: 20vw;
+        margin: 100px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+        background-color: white;
+}
+
+.fr3 {
+    width:100%
+}
+
+.fr1 {
+    margin-left: 30px;
+    width: 100%;
+}
+
+.banner, .detail {
+    width: 95%;
+    margin: 5px;
+    height: 500px;
+}
+
+.banner img, .img-cards img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover
+}
+
+.img-cards {
+    gap: 1px; 
+    width: 95%;
+    height: 200px;
+    cursor: pointer;
+}
+.img-cards:hover {
+    opacity: .7;
+}
+.text-card{
+    width: 95%;
+    margin: auto;
+    color:rgb(52, 50, 50)
+    
+}
+.top-bar{
+    display: grid; 
+    grid-template-columns: auto auto;   
+    justify-content: space-between;
+}
+.mg-10{
+    margin:10px;
+}
+.mg-t-b-30 {
+    margin: 30px 5px;
+}
+.mg-bt-30{
+margin-bottom: 30px;
+}
+
+.hr-line{
+    width: 95%;
+    margin:  auto;
+    margin-bottom: 10px;
+    border: 1px solid rgb(235, 231, 231);
+}
+.action-button{
+    margin: 5px;
+    text-align: start;
+}
+.center{
+    text-align: center;
+}
+.properties, .values{
+    text-align: start;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 350px;
+    margin: auto;
+
+}
+
+.bottom img {
+    width: 100%;
+}
+.fullwidth{
+    width:100%;
+}
+.btn { 
+    font-size:15px;
+    background-color:red;
+}

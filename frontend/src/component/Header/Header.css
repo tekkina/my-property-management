@@ -1,0 +1,7 @@
+.btn{
+    font-size:50px;
+    background-color:red;
+}
+.btn:hover{
+    background-color:aquamarine;
+}
