@@ -4,16 +4,15 @@ import com.waa.auth.*;
 import com.waa.domain.User;
 import com.waa.domain.Role;
 import com.waa.config.JwtService;
-import com.waa.exceptions.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import com.waa.repository.UserRepository;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import com.waa.exceptions.UserNotFoundException;
 import com.waa.exceptions.PasswordNotMatchException;
 import com.waa.exceptions.UserAlreadyExistsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 @Service
@@ -74,7 +73,7 @@ public class AuthenticationService implements IAuthenticationService{
     }
 
     @Override
-    public ApproveResponse approve(Integer userId) throws UserNotFoundException{
+    public ApproveResponse approve(int userId) throws UserNotFoundException{
         var user = userRepository.findById(userId)
                 .orElseThrow(()-> new UsernameNotFoundException("User not found!"));
 

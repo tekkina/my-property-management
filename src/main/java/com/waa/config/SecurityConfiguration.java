@@ -3,6 +3,7 @@ package com.waa.config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -25,6 +26,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/api/v1/auth/login").permitAll()
                 .requestMatchers("/api/v1/auth/register").permitAll()
                 .requestMatchers("/api/v1/auth/test/**").permitAll()
+                .requestMatchers(HttpMethod.POST,"/api/v1/auth/properties").hasRole("OWNER")
                 .anyRequest()
                 .authenticated()
                 .and()

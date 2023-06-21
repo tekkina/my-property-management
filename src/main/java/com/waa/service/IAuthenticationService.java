@@ -4,7 +4,6 @@ import com.waa.auth.*;
 import com.waa.exceptions.UserNotFoundException;
 import com.waa.exceptions.PasswordNotMatchException;
 import com.waa.exceptions.UserAlreadyExistsException;
-import org.springframework.http.ResponseEntity;
 
 public interface IAuthenticationService {
 
@@ -14,5 +13,5 @@ public interface IAuthenticationService {
     RegisterResponse register(RegisterRequest registerRequest)
             throws UserAlreadyExistsException, PasswordNotMatchException;
 
-    ApproveResponse approve(Integer userId) throws UserNotFoundException;
+    ApproveResponse approve(int userId) throws UserNotFoundException;
 }
