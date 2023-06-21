@@ -36,10 +36,11 @@ public class PropertyController {
             @RequestParam(value = "maxPrice", required=false ) Integer maxPrice,
             @RequestParam(value = "city", required=false ) String city,
             @RequestParam(value = "state", required=false ) String state,
-            @RequestParam(value = "zipCode", required=false ) String zipCode
+            @RequestParam(value = "zip", required=false ) String zipCode
     ){
         if (description != null || minPrice != null || maxPrice != null || city != null || state != null || zipCode != null){
             var propertyCriteria = new PropertyCriteriaRequest(description, minPrice, maxPrice, city,state,zipCode);
+            System.out.println(propertyCriteria);
             return propertyCriteriaRepository.findAllByCriteria(propertyCriteria);
         }
         return propertyService.findAll();

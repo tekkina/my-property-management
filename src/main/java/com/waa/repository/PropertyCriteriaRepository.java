@@ -35,6 +35,18 @@ public class PropertyCriteriaRepository {
             Predicate maxPricePredicate = criteriaBuilder.lessThanOrEqualTo(root.get("price"), propertyCriteriaRequest.maxPrice());
             predicates.add(maxPricePredicate);
         }
+        if (propertyCriteriaRequest.city() != null){
+            Predicate cityPredicate = criteriaBuilder.like(root.get("address").get("city"),"%" + propertyCriteriaRequest.city() + "%");
+            predicates.add(cityPredicate);
+        }
+        if (propertyCriteriaRequest.state() != null){
+            Predicate statePredicate = criteriaBuilder.like(root.get("address").get("state"),"%" + propertyCriteriaRequest.state() + "%");
+            predicates.add(statePredicate);
+        }
+        if (propertyCriteriaRequest.zip() != null){
+            Predicate zipCodePredicate = criteriaBuilder.like(root.get("address").get("zipCode"),"%" + propertyCriteriaRequest.zip() + "%");
+            predicates.add(zipCodePredicate);
+        }
         criteriaQuery.where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
         TypedQuery<Property> query = entityManager.createQuery(criteriaQuery);
         return query.getResultList();
