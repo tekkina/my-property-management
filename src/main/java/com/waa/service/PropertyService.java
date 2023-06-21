@@ -3,18 +3,18 @@ package com.waa.service;
 import com.waa.domain.Address;
 import com.waa.domain.Property;
 import com.waa.domain.PropertyStatus;
-import com.waa.domain.User;
-import com.waa.domain.request.PropertyRequest;
-import com.waa.repository.PropertyRepository;
-import com.waa.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.waa.repository.UserRepository;
+import com.waa.repository.PropertyRepository;
+import com.waa.domain.request.PropertyRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.Authentication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -54,5 +54,10 @@ public class PropertyService implements IPropertyService{
                 .build();
 
         propertyRepository.save(property);
+    }
+
+    @Override
+    public List<Property> findAll() {
+        return propertyRepository.findAll();
     }
 }
